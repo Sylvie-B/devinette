@@ -9,10 +9,10 @@
 <body>
 
     <div id="container">
+        <div>
+            <p>Bonjour, j'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ? En 10 essais max ?</p>
+        </div>
         <div id="quest">
-            <div>
-                <p>Bonjour, j'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ? En 10 essais max ?</p>
-            </div>
             <div id="switch">
                 <div id="yes">
                     <div>Entrez un nombre entre 0 et 100</div>
@@ -27,20 +27,20 @@
                     <div id="testAnswer"></div> <!-- entrez plus petit / plus grand ou gagné -->
                 </div>
                 <div id="wrong">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
+                    <div class="testedNbr"></div>
                 </div>
                 <div id="afterTest">
                     <div id="result"></div> <!--    info nbr d'essais ou perdu   -->
-                    <div id="restart">RESTART</div>
+                    <button id="restart">RESTART</button>
                 </div>
             </div>
         </div>
