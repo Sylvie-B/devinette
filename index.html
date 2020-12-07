@@ -10,41 +10,42 @@
 
     <div id="container">
         <div>
-            <p>Bonjour, j'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ? En 10 essais max ?</p>
+            <p>Bienvenue à Find the number !</p>
+            <p>J'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ?</p>
+            <p>En 10 essais maximum ?</p>
         </div>
-        <div id="quest">
-            <div id="switch">
-                <div id="testNbr">
-                    <div id="testAnswer">Entrez un nombre entre 0 et 100</div> <!-- entrez plus petit / plus grand ou gagné -->
+
+            <div id="game">
+                <div id="start">
+                    <p>Commencer</p>
                 </div>
+                <div id="retour">Entrez un nombre entre 0 et 100</div> <!-- entrez plus petit / plus grand ou gagné -->
                 <div>
                     <label for="try"></label>
                     <input type="text" id="try" size="1">
-                    <button id="test">Valider</button>
+                    <button id="valider">VALIDER</button>
                 </div>
-                <div id="doYou">
-                    <p>Commencer</p>
-                </div>
-
                 <div id="wrong">
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
-                    <div class="testedNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
+                    <div class="wrongNbr"></div>
                 </div>
                 <div id="afterTest">
-                    <div id="result"></div> <!--    info nbr d'essais ou perdu   -->
-                    <button id="restart">RESTART</button>
+                    <div id="info">il vous reste 10 essais</div> <!--    info nbr d'essais ou perdu   -->
+                    <a href="index.html">
+                        <button id="restart">RESTART</button>
+                    </a>
+
                 </div>
             </div>
         </div>
-    </div>
     <script src="appFindTheNumber.js"></script>
 </body>
 

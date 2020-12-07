@@ -1,69 +1,55 @@
-let start = document.getElementById("doYou");
-let restart = document.getElementById("restart");
-let react = document.getElementById("testAnswer");
-let wronNumber = document.getElementsByClassName("testedNbr");
-let result = document.getElementById("result");
 
-
+let start = document.getElementById("start");   /* div : commencer */
+let retour = document.getElementById("retour");     /* entrez un nbr ou */
+let wrongNbr = document.getElementsByClassName("wrongNbr");
+let info = document.getElementById("info");
 
 
 start.addEventListener("click", function (){   /* au click sur commencer */
-    let trial = 0;                                  /* compte le nbr d'essai */
     start.style.display = "none";
-    result.style.visibility = "visible";
-    result.innerHTML = "il vous reste 10 essai";
-
+    let trial = 0;                                  /* compteur nbr d'essai */
     let random = Math.ceil(Math.random()*100);  /* choisi un nombre random */
 
-    let userNbr = "";
-
-    document.getElementById("test").addEventListener("click", function (){  /* à validation */
-        userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
-        if(trial < 9) {
-            if(isNaN(userNbr)) {
-                react.innerHTML = "vous devez entrez un nombre !"
+    document.getElementById("valider").addEventListener("click", function (){
+        let userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
+        if(trial < 9) {             /* test s'il reste des essais */
+            if(isNaN(userNbr)) {      /*  test si l'entrée et un nbr */
+                retour.innerHTML = "vous devez entrez un nombre !"
                 document.getElementById("try").value = "";
             }
             else {
                 /* compare les 2 chiffres */
                 if(userNbr === random){
                     document.getElementById("try").value = "";
-                    wronNumber[trial].innerHTML = userNbr.toString();
-                    react.innerHTML = "BRAVO !!! Vous avez gagné !!!"
-                    result.style.visibility ="hidden";
+                    wrongNbr[trial].innerHTML = userNbr.toString();
+                    retour.innerHTML = "BRAVO !!! Vous avez gagné !!!";
                 }
                 else if(userNbr < random){
                     document.getElementById("try").value = "";
-                    react.innerHTML = "Entrez un nombre plus grand";
-                    wronNumber[trial].innerHTML = userNbr.toString();
+                    retour.innerHTML = "Entrez un nombre plus grand";
+                    wrongNbr[trial].innerHTML = userNbr.toString();
                 }
                 else {
                     document.getElementById("try").value = "";
-                    react.innerHTML = "Entrez un nombre plus petit";
-                    react.style.visibility = "visible";
-                    wronNumber[trial].innerHTML = userNbr.toString();
+                    retour.innerHTML = "Entrez un nombre plus petit";
+                    wrongNbr[trial].innerHTML = userNbr.toString();
                 }
-            result.innerHTML = "il vous reste " + (9-trial) + " essai(s)";
-            ++ trial;          /* incermente le nbr d'essai(s) */
+                if(retour.innerHTML === "BRAVO !!! Vous avez gagné !!!" ){
+                    info.innerHTML = "Vous avez gangné en " + (trial + 1) + " essai(s)"
+                }
+                else {
+                    info.innerHTML = "il vous reste " + (9-trial) + " essai(s)";
+                    ++ trial;          /* incermente le nbr d'essai(s) */
+                }
             }
+
         }
         else {
-            wronNumber[trial].innerHTML = userNbr.toString();
-            react.innerHTML = "Vous avez perdu !!!"
-            restart.style.visibility = "visible";
-            result.style.visibility = "hidden";
+            wrongNbr[trial].innerHTML = userNbr.toString();
+            retour.innerHTML = "Vous avez perdu !!!"
             document.getElementById("try").value = "";
             trial = 0;
 
         }
     })
-})
-
-restart.addEventListener("click", function (){
-    react.style.visibility = "hidden";
-    restart.style.visibility = "hidden";
-    for(let i = 0 ; i < wronNumber.length ; i++){
-        wronNumber[i].innerHTML = "";
-    }
-    start.style.display = "block";
 })

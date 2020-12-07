@@ -15,40 +15,28 @@ body {
 
 #container{
     width: 80%;
-    height: 50vh;
     margin: 10vh auto 0 auto;
     background-color: cadetblue;
-    padding: 1vh 1vw 1vh 1vw;
+    padding: 1vh 1vw 2vh 1vw;
     border: 1px solid black;
     border-radius: 15px;
     font-size: 1.5vw;
     text-align: center;
 }
 
-#switch{
+#game{
     width: 50%;
     margin: 1vh auto 1vh auto;
     padding-top: 2vh;
     position: relative;
 }
 
-#doYou{
-    width: 100%;
-    height: 44vh;
-    padding-top: 18vh;
-    font-size: 3vh;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: green;
-    position: absolute;
-    top: 0;
-}
-
 #try{
     margin: 2vh 1vw 2vh 1vw;
+    font-size: 2vw;
 }
 
-#testAnswer, #result{
+#retour, #info{
     width: 50%;
     margin: 1vh auto 1vh auto;
     padding: 1vh 2vw 1vh 2vw;
@@ -56,6 +44,19 @@ body {
     background-color: white;
     border: 1px black dashed;
     border-radius: 15px;
+}
+
+#start{
+    width: 100%;
+    height: 42vh;
+    margin: auto;
+    padding-top: 18vh;
+    font-size: 3vh;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: cadetblue;
+    position: absolute;
+    top: 0;
 }
 
 #wrong{
@@ -74,9 +75,9 @@ body {
     border-radius: 5px;
 }
 
-#restart{
-    width: 20%;
-    height: 5vh;
+#restart, #valider{
+    width: 25%;
+    height: 4vh;
     margin: 2vh auto 2vh auto;
     background-color: white;
     border: 1px black solid;
