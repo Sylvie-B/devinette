@@ -3,7 +3,7 @@ let restart = document.getElementById("restart");
 let react = document.getElementById("testAnswer");
 let wronNumber = document.getElementsByClassName("testedNbr");
 let result = document.getElementById("result");
-console.log(wronNumber);
+
 
 
 
@@ -18,7 +18,8 @@ start.addEventListener("click", function (){   /* au click sur commencer */
         let userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
         if(trial < 9) {
             if(isNaN(userNbr)) {
-                alert("vous devez entrez un nombre !")
+                react.style.visibility = "visible";
+                react.innerHTML = "vous devez entrez un nombre !"
                 document.getElementById("try").value = "";
             }
             else {
@@ -28,32 +29,35 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                     react.innerHTML = "BRAVO !!! Vous avez gagné !!!"
                     react.style.visibility = "visible";
                     restart.style.visibility = "visible";
-                    result.style.visibility = "hidden";
+                    result.style.display = "none";
+                    trial = 0;
+
                 }
                 else if(userNbr < random){
                     document.getElementById("try").value = "";
                     react.innerHTML = "Entrez un nombre plus grand";
                     react.style.visibility = "visible";
-                    wronNumber[trial].innerHTML = userNbr;
+                    wronNumber[trial].innerHTML = userNbr.toString();
                 }
                 else {
                     document.getElementById("try").value = "";
                     react.innerHTML = "Entrez un nombre plus petit";
                     react.style.visibility = "visible";
-                    wronNumber[trial].innerHTML = userNbr;
+                    wronNumber[trial].innerHTML = userNbr.toString();
                 }
                 document.getElementById("result").style.visibility = "visible";
                 document.getElementById("result").innerHTML = "il vous reste " + (9-trial) + " essai(s)";
                 ++ trial;          /* incermente le nbr d'essai(s) */
-                console.log(trial);
             }
         }
         else {
-            wronNumber[trial].innerHTML = userNbr;
+            wronNumber[trial].innerHTML = userNbr.toString();
             react.innerHTML = "Vous avez perdu !!!"
             restart.style.visibility = "visible";
             result.style.visibility = "hidden";
             document.getElementById("try").value = "";
+            trial = 0;
+
         }
     })
 })
@@ -65,6 +69,4 @@ restart.addEventListener("click", function (){
         wronNumber[i].innerHTML = "";
     }
     start.style.display = "block";
-    trial = 0;
-    console.log(trial);
 })
