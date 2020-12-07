@@ -12,7 +12,7 @@ start.addEventListener("click", function (){   /* au click sur commencer */
     start.style.display = "none";
 
     let random = Math.ceil(Math.random()*100);  /* choisi un nombre random */
-    let trial = 7;                                  /* compte le nbr d'essai */
+    let trial = 0;                                  /* compte le nbr d'essai */
 
     document.getElementById("test").addEventListener("click", function (){  /* à validation */
         let userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
@@ -59,13 +59,12 @@ start.addEventListener("click", function (){   /* au click sur commencer */
 })
 
 restart.addEventListener("click", function (){
-    start.style.visibility = "visible";
     react.style.visibility = "hidden";
     restart.style.visibility = "hidden";
     for(let i = 0 ; i < wronNumber.length ; i++){
         wronNumber[i].innerHTML = "";
     }
-
+    start.style.display = "block";
     trial = 0;
     console.log(trial);
 })
