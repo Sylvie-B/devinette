@@ -24,8 +24,22 @@ body {
     text-align: center;
 }
 
-#quest div{
-    margin-top: 2vh;
+#switch{
+    width: 50%;
+    height: 40vh;
+    margin: 1vh auto 1vh auto;
+    position: relative;
+}
+
+#doYou{
+    width: 100%;
+    height: 40vh;
+    padding-top: 18vh;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: green;
+    position: absolute;
+    top: 0;
 }
 
 #try{
@@ -33,8 +47,9 @@ body {
 }
 
 #testAnswer, #result{
-    width: 30%;
+    width: 50%;
     margin: 2vh auto 2vh auto;
+    padding-top: 1vh;
     height: 5vh;
     background-color: white;
     border: 1px black dashed;
@@ -43,7 +58,7 @@ body {
 }
 
 #wrong{
-    width: 50%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -58,7 +73,7 @@ body {
 }
 
 #restart{
-    width: 10%;
+    width: 20%;
     height: 5vh;
     margin: 2vh auto 2vh auto;
     padding-top: 1vh;

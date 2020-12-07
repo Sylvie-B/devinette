@@ -13,29 +13,36 @@
             <div>
                 <p>Bonjour, j'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ? En 10 essais max ?</p>
             </div>
-            <div>Entrez un nombre</div>
-            <label for="try"></label>
-            <input type="text" id="try" size="1">
-            <button id="test">Valider</button>
-        </div>
-        <div id="testNbr">
-            <div id="testAnswer"></div> <!-- entrez plus petit / plus grand ou gagné -->
-        </div>
-        <div id="wrong">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div id="afterTest">
-            <div id="result"></div> <!--    info nbr d'essais ou perdu   -->
-            <div id="restart">START</div>
+            <div id="switch">
+                <div id="yes">
+                    <div>Entrez un nombre entre 0 et 100</div>
+                    <label for="try"></label>
+                    <input type="text" id="try" size="1">
+                    <button id="test">Valider</button>
+                </div>
+                <div id="doYou">
+                    <p>Commencer</p>
+                </div>
+                <div id="testNbr">
+                    <div id="testAnswer"></div> <!-- entrez plus petit / plus grand ou gagné -->
+                </div>
+                <div id="wrong">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="afterTest">
+                    <div id="result"></div> <!--    info nbr d'essais ou perdu   -->
+                    <div id="restart">RESTART</div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="appFindTheNumber.js"></script>
