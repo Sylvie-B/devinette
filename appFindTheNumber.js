@@ -8,17 +8,19 @@ let result = document.getElementById("result");
 
 
 start.addEventListener("click", function (){   /* au click sur commencer */
-
+    let trial = 0;                                  /* compte le nbr d'essai */
     start.style.display = "none";
+    result.style.visibility = "visible";
+    result.innerHTML = "il vous reste 10 essai";
 
     let random = Math.ceil(Math.random()*100);  /* choisi un nombre random */
-    let trial = 0;                                  /* compte le nbr d'essai */
+
+    let userNbr = "";
 
     document.getElementById("test").addEventListener("click", function (){  /* à validation */
-        let userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
+        userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
         if(trial < 9) {
             if(isNaN(userNbr)) {
-                react.style.visibility = "visible";
                 react.innerHTML = "vous devez entrez un nombre !"
                 document.getElementById("try").value = "";
             }
@@ -26,17 +28,13 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                 /* compare les 2 chiffres */
                 if(userNbr === random){
                     document.getElementById("try").value = "";
+                    wronNumber[trial].innerHTML = userNbr.toString();
                     react.innerHTML = "BRAVO !!! Vous avez gagné !!!"
-                    react.style.visibility = "visible";
-                    restart.style.visibility = "visible";
-                    result.style.display = "none";
-                    trial = 0;
-
+                    result.style.visibility ="hidden";
                 }
                 else if(userNbr < random){
                     document.getElementById("try").value = "";
                     react.innerHTML = "Entrez un nombre plus grand";
-                    react.style.visibility = "visible";
                     wronNumber[trial].innerHTML = userNbr.toString();
                 }
                 else {
@@ -45,9 +43,8 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                     react.style.visibility = "visible";
                     wronNumber[trial].innerHTML = userNbr.toString();
                 }
-                document.getElementById("result").style.visibility = "visible";
-                document.getElementById("result").innerHTML = "il vous reste " + (9-trial) + " essai(s)";
-                ++ trial;          /* incermente le nbr d'essai(s) */
+            result.innerHTML = "il vous reste " + (9-trial) + " essai(s)";
+            ++ trial;          /* incermente le nbr d'essai(s) */
             }
         }
         else {

@@ -51,12 +51,11 @@ body {
 #testAnswer, #result{
     width: 50%;
     margin: 1vh auto 1vh auto;
-    padding-top: 1vh;
+    padding: 1vh 2vw 1vh 2vw;
     height: 8vh;
     background-color: white;
     border: 1px black dashed;
     border-radius: 15px;
-    visibility: hidden;
 }
 
 #wrong{
@@ -82,6 +81,5 @@ body {
     background-color: white;
     border: 1px black solid;
     border-radius: 15px;
-    visibility: hidden;
 }
 
