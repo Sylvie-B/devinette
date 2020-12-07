@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find the number</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="quest">
+            <div>
+                <p>Bonjour, j'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ? En 10 essais max ?</p>
+            </div>
+            <div>Entrez un nombre</div>
+            <label for="try"></label>
+            <input type="text" id="try" size="1">
+            <button id="test">Valider</button>
+        </div>
+        <div id="testNbr">
+            <div id="testAnswer"></div> <!-- entrez plus petit / plus grand ou gagné -->
+        </div>
+        <div id="wrong">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="afterTest">
+            <div id="result"></div> <!--    info nbr d'essais ou perdu   -->
+            <div id="restart">START</div>
+        </div>
+    </div>
+    <script src="appFindTheNumber.js"></script>
+</body>
+
