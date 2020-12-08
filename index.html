@@ -11,21 +11,24 @@
 
     <div id="container">
         <div>
-            <p>Bienvenue à <span id="title">Find the number</span> !</p>
-            <p>J'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ?</p>
-            <p>En 10 essais maximum ?</p>
+            <p id="title">Bienvenue à Find the number !</p>
         </div>
 
             <div id="game">
                 <div id="start">
-                    <p>Commencer</p>
+                    <p>J'ai choisi un nombre entre 0 et 100,</p>
+                    <p>saurez-vous le devinez ?</p>
+                    <p>En 10 essais maximum ?</p>
+                    <p id="begin">Cliquez pour commencer</p>
                 </div>
-                <div id="win" ></div>
-                <div id="loose">PERDU !!!</div>
+                <div id="win" >GAGNE !!!</div>
+                <div id="end">
+                    <div id="loose">PERDU !!!</div>
+                </div>
                 <div id="retour">Entrez un nombre entre 0 et 100</div> <!-- entrez plus petit / plus grand ou gagné -->
                 <div>
                     <label for="try"></label>
-                    <input type="text" id="try" size="1">
+                    <input type="text" id="try" minlength="3" size="1">
                     <button id="valider">VALIDER</button>
                 </div>
                 <div id="wrong">

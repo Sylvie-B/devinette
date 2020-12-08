@@ -7,10 +7,11 @@ let info = document.getElementById("info");
 
 start.addEventListener("click", function (){   /* au click sur commencer */
     start.style.display = "none";
+    document.getElementById("try").focus();
     let trial = 0;                                  /* compteur nbr d'essai */
     let random = Math.ceil(Math.random()*100);  /* choisi un nombre random */
-
     document.getElementById("valider").addEventListener("click", function (){
+        document.getElementById("try").focus();
         let userNbr = parseInt(document.getElementById("try").value);       /* recup l'entree */
         if(trial < 9) {             /* test s'il reste des essais */
             if(isNaN(userNbr)) {      /*  test si l'entrée et un nbr */
@@ -22,7 +23,7 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                     document.getElementById("try").value = "";
                     wrongNbr[trial].innerHTML = userNbr.toString();
                     retour.innerHTML = "BRAVO !!! Vous avez gagné !!!";
-                    document.getElementById("win").style.display = "block";
+                    document.getElementById("win").style.visibility = "visible";
                 }
                 else if(userNbr < random){
                     document.getElementById("try").value = "";

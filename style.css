@@ -8,7 +8,7 @@
 
 html {
     font-size: 62.5%;
-    font-family: sans-serif;
+    font-family: 'Ranchers', cursive;
 }
 
 body {
@@ -17,30 +17,50 @@ body {
 
 #container{
     width: 80%;
+    height: 70vh;
     margin: 10vh auto 0 auto;
-    background-color: cadetblue;
-    padding: 1vh 1vw 2vh 1vw;
-    border: 1px solid black;
+    background-image: url("nombreMystere.jpg");
+    background-size: cover;
+    padding: 5vh 1vw 2vh 1vw;
     border-radius: 15px;
     font-size: 2vw;
     text-align: center;
 }
 
 #title{
-    font-size: 2vw;
-    font-weight: bold;
+    color: white;
+    font-size: 4vw;
+}
+
+#start{
+    height: 49vh;
+    padding: 6vh 3vw 0 3vw;
+    border: 5px solid black;
+    border-radius: 15px;
+    background-image: url("nombreMystere.jpg");
+    background-size: cover;
+    font-size: 4vh;
+    color: white;
+}
+
+#start p:last-child{
+    margin-top: 6vh;
+}
+
+#win, #start{
+    width: 100%;
+    position: absolute;
+    top: 3vh;
 }
 
 #game{
-    width: 80%;
-    margin: 1vh auto 1vh auto;
-    padding-top: 2vh;
+    padding-top: 5vh;
     position: relative;
 }
 
 #try{
     margin: 2vh 1vw 2vh 1vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
 
 #retour, #info{
@@ -52,26 +72,24 @@ body {
     border-radius: 15px;
 }
 
-#start{
-    height: 48vh;
-    padding-top: 20vh;
-    font-size: 5vh;
-    font-weight: bold;
-    border: 5px solid black;
+#win{
+    height: 20vh;
+    font-size: 10vw;
+    color : lawngreen;
+    background-color: limegreen;
+    border: 5px solid lawngreen;
     border-radius: 15px;
-    background-color: cadetblue;
+    visibility: hidden;
 }
 
-#win{
-    height: 36vh;
-    background-image: url("cGagne.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+#end{
+    width: 80%;
+    margin: auto;
     visibility: hidden;
 }
 
 #loose{
-    width: 100%;
+    width: 80%;
     font-family: 'Ranchers', cursive;
     font-size: 9vw;
     color : red;
@@ -79,60 +97,114 @@ body {
     border-radius: 15px;
     transform : rotate(-10deg);
     position: absolute;
-    top : 5vh;
-    visibility: hidden;
-}
-
-#win, #start{
-    width: 100%;
-    margin: auto;
-    position: absolute;
-    top: 0;
+    top : 10vh;
 }
 
 #wrong{
     width: 100%;
     margin: auto;
+    padding-top: 2vh;
     display: flex;
     justify-content: space-between;
 }
 
 #wrong div{
-    width: 3vw;
-    height: 3vh;
-    margin: 1vh auto 1vh auto;
+    /*width: 4vw;*/
+    min-width: 4rem;
+    height: 4vh;
+    margin: 1vh 1vw 1vh 1vw;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
 }
 
+#afterTest{
+    padding-top: 4vh;
+}
+
 #restart, #valider{
-    width: 30%;
-    height: 4vh;
+    width: 20%;
+    height: 6vh;
     margin: 2vh auto 2vh auto;
+    font-size: 1.5vw;
     background-color: white;
     border: 1px black solid;
     border-radius: 15px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     #container{
-        width: 100%;
-        margin: 0;
-        font-size: 4vw;
+        font-size: 2.5vw;
     }
 
     #title{
         font-size: 4vw;
     }
 
+    #start{
+        height: 55vh;
+    }
+
+    #try{
+        font-size: 3vw;
+    }
+
     #retour, #info {
         width: 80%;
     }
+
+    #wrong{
+        font-size: 2.5vw;
+    }
+
+    #wrong div{
+        width: 5vw;
+    }
 }
 
-@media screen and (max-width: 600px) {
-    #restart, #valider {
-        width: 35%;
+@media screen and (max-width: 650px) {
+    #container{
+        width: 100%;
+        margin: 0;
     }
+
+    #retour, #info {
+        width: 70%;
+        font-size: 3vw;
+    }
+
+    #restart, #valider {
+        width: 30%;
+        font-size: 2.5vw;
+    }
+
+    #try{
+        font-size: 3.5vw;
+    }
+
+    #wrong{
+        font-size: 3vw;
+    }
+    #wrong div{
+        width: 6vw;
+    }
+    #wrong {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #container{
+        font-size: 5vw;
+    }
+
+    #start{
+        font-size: 2.4vh;
+    }
+
+    #restart, #valider {
+        font-size: 3vw;
+    }
+
+
 }
