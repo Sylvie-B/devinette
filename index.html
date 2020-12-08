@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Find the number</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1">
 
 </head>
 <body>
 
     <div id="container">
         <div>
-            <p>Bienvenue à Find the number !</p>
+            <p>Bienvenue à <span id="title">Find the number</span> !</p>
             <p>J'ai choisi un nombre entre 0 et 100, saurez-vous le devinez ?</p>
             <p>En 10 essais maximum ?</p>
         </div>
@@ -19,6 +20,8 @@
                 <div id="start">
                     <p>Commencer</p>
                 </div>
+                <div id="win" ></div>
+                <div id="loose">PERDU !!!</div>
                 <div id="retour">Entrez un nombre entre 0 et 100</div> <!-- entrez plus petit / plus grand ou gagné -->
                 <div>
                     <label for="try"></label>
@@ -38,7 +41,7 @@
                     <div class="wrongNbr"></div>
                 </div>
                 <div id="afterTest">
-                    <div id="info">il vous reste 10 essais</div> <!--    info nbr d'essais ou perdu   -->
+                    <div id="info">Il reste 10 essais</div> <!--    info nbr d'essais ou perdu   -->
                     <a href="index.html">
                         <button id="restart">RESTART</button>
                     </a>

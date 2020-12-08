@@ -17,12 +17,12 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                 retour.innerHTML = "vous devez entrez un nombre !"
                 document.getElementById("try").value = "";
             }
-            else {
-                /* compare les 2 chiffres */
+            else {         /* compare les 2 chiffres */
                 if(userNbr === random){
                     document.getElementById("try").value = "";
                     wrongNbr[trial].innerHTML = userNbr.toString();
                     retour.innerHTML = "BRAVO !!! Vous avez gagné !!!";
+                    document.getElementById("win").style.display = "block";
                 }
                 else if(userNbr < random){
                     document.getElementById("try").value = "";
@@ -35,21 +35,21 @@ start.addEventListener("click", function (){   /* au click sur commencer */
                     wrongNbr[trial].innerHTML = userNbr.toString();
                 }
                 if(retour.innerHTML === "BRAVO !!! Vous avez gagné !!!" ){
-                    info.innerHTML = "Vous avez gangné en " + (trial + 1) + " essai(s)"
+                    info.innerHTML = "En " + (trial + 1) + " essai(s)"
                 }
                 else {
-                    info.innerHTML = "il vous reste " + (9-trial) + " essai(s)";
+                    info.innerHTML = "Il reste " + (9-trial) + " essai(s)";
                     ++ trial;          /* incermente le nbr d'essai(s) */
                 }
             }
-
         }
         else {
             wrongNbr[trial].innerHTML = userNbr.toString();
-            retour.innerHTML = "Vous avez perdu !!!"
+            retour.innerHTML = "Vous avez perdu !!! C'était le numéro " + random;
+            info.innerHTML = "Vous n'avez plus d'essais";
             document.getElementById("try").value = "";
+            document.getElementById("loose").style.visibility = "visible"
             trial = 0;
-
         }
     })
 })
