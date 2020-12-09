@@ -76,7 +76,7 @@ body {
     height: 20vh;
     font-size: 10vw;
     color : lawngreen;
-    background-color: limegreen;
+    background-color: #008b8b96;
     border: 5px solid lawngreen;
     border-radius: 15px;
     visibility: hidden;
@@ -90,6 +90,7 @@ body {
 
 #loose{
     width: 80%;
+    height: 25%;
     font-family: 'Ranchers', cursive;
     font-size: 9vw;
     color : red;
@@ -193,18 +194,31 @@ body {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     #container{
-        font-size: 5vw;
+        font-size: 7vw;
     }
 
     #start{
-        font-size: 2.4vh;
+        font-size: 2.8vh;
     }
 
     #restart, #valider {
         font-size: 3vw;
     }
 
+}
 
+@media screen and (max-width: 400px) {
+    #container{
+        font-size: 8vw;
+    }
+
+    #retour, #info {
+        font-size: 4vw;
+    }
+
+    #try{
+        font-size: 5vw;
+    }
 }
